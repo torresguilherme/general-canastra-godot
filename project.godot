@@ -11,8 +11,9 @@ config_version=3
 [application]
 
 config/name="Canastra"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
-[rendering]
+[display]
 
-environment/default_environment="res://default_env.tres"
+window/size/fullscreen=true

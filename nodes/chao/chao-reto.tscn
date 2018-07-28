@@ -2,7 +2,7 @@
 
 [ext_resource path="res://assets/chao-reto.obj" type="ArrayMesh" id=1]
 
-[node name="chao-reto" type="Node" index="0"]
+[node name="chao-reto" type="Spatial"]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
