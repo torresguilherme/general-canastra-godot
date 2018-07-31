@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nodes/enemies/follow.gd" type="Script" id=1]
+
+[node name="follow" type="PathFollow" index="0"]
+
+offset = 0.0
+h_offset = 0.0
+v_offset = 0.0
+rotation_mode = 3
+cubic_interp = true
+loop = false
+script = ExtResource( 1 )
+
+
