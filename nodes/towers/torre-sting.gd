@@ -11,7 +11,7 @@ func _ready():
 	pass
 
 func _process(delta):
-	if target == null:
+	if !target || target.hp <= 0:
 		target = pickTarget()
 	else:
 		look_at(target.global_transform.origin, Vector3(0, 1, 0))
@@ -28,7 +28,7 @@ func pickTarget():
 	var ret = null
 	var enemies = $"../../../enemies"
 	for i in enemies.get_children():
-		if global_transform.origin.distance_to(i.get_children()[0].global_transform.origin) < reach:
+		if global_transform.origin.distance_to(i.get_children()[0].global_transform.origin) < reach && i.get_children()[0].hp > 0:
 			ret = i.get_children()[0]
 			break
 	return ret
@@ -36,7 +36,6 @@ func pickTarget():
 func shoot():
 	if target != null:
 		var newBullet = bullet.instance()
-		newBullet.translation = Vector3(0, 1, 0)
+		newBullet.translation = Vector3(0, 3, 0)
 		newBullet.target = target
 		add_child(newBullet)
-		print("shoot")
